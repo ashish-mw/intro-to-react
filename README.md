@@ -9,8 +9,8 @@ a function to generate a new UI each time a "state" variable changed.
 ```json
 {
   "names": [
-    {"id": 100, "name": "Jfox", "error": false},
-    {"id": 101, "name": "Zfox", "error": true}
+    {"id": 100, "name": "Jfox", "error": 0},
+    {"id": 101, "name": "Zfox", "error": 1}
   ]
 }
 ```
