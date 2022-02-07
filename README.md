@@ -21,4 +21,6 @@ a function to generate a new UI each time a "state" variable changed.
 
 - https://reactjs.org/docs/getting-started.html
 - React Hooks https://www.youtube.com/watch?v=j942wKiXFu8&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d
+- Transpilation https://en.wikipedia.org/wiki/Source-to-source_compiler
+- ECMAScript https://en.wikipedia.org/wiki/ECMAScript
 
