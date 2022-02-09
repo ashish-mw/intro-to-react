@@ -33,28 +33,7 @@
   <div id="app"></div>
 
 
-  <script type="text/babel">
-
-
-    function App() {
-
-      const [movieName, setMovieName] = React.useState('')
-
-      function handleChange(e) {
-        setMovieName(e.target.value)
-      }
-
-      return (
-       <div>
-        <p>movie: {movieName}</p>
-
-        <input type="text" onChange={handleChange}/>
-        </div>
-      )
-    }
-
-    ReactDOM.render(<App/>, document.querySelector('#app'))
-
+  <script type="text/babel" src="/js/app.js">
   </script>
 
 </body>
