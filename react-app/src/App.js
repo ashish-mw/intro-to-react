@@ -1,17 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// utilities
+import { getMoviesFromStorage, putMoviesInStorage } from "./utils";
 
 // components
 import AddMovieForm from "./components/AddMovieForm";
 import MovieList from "./components/MovieList";
 
 function App() {
-  const initialMovieList = [
-    { id: 1, name: "The Matrix" },
-    { id: 2, name: "The Matrix Reloaded" },
-    { id: 3, name: "Ironman" },
-  ];
+  const [movieList, setMovieList] = useState([]);
 
-  const [movieList, setMovieList] = useState(initialMovieList);
+  useEffect(() => {
+    const movies = getMoviesFromStorage();
+    if (movies) {
+      const moviesJSON = JSON.parse(movies);
+      setMovieList(moviesJSON);
+    }
+  }, []);
+
+  useEffect(() => {
+    const movies = JSON.stringify(movieList);
+    putMoviesInStorage(movies);
+  }, [movieList]);
 
   function handleDelete(id) {
     setMovieList((prev) => prev.filter((m) => m.id !== id));
