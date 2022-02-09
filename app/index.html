@@ -35,14 +35,25 @@
 
   <script type="text/babel">
 
-    // const myP = React.createElement('p', null, 'Hello World')
 
-    function MyP() {
-      // return React.createElement('p', null, 'Hello World')
-      return <p>Hello World</p>
+    function App() {
+
+      const [movieName, setMovieName] = React.useState('')
+
+      function handleChange(e) {
+        setMovieName(e.target.value)
+      }
+
+      return (
+       <div>
+        <p>movie: {movieName}</p>
+
+        <input type="text" onChange={handleChange}/>
+        </div>
+      )
     }
 
-    ReactDOM.render(<MyP/>, document.querySelector('#app'))
+    ReactDOM.render(<App/>, document.querySelector('#app'))
 
   </script>
 
