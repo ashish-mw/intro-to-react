@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie list</title>
+
+  <script src="/js/babel.min.js"></script>
+  <script src="/js/react.development.js"></script>
+  <script src="/js/react-dom.development.js"></script>
+</head>
+<body>
+
+  <!--
+  <form action="">
+    <input type="text" >
+    <input type="submit" value="Add new movie">
+  </form>
+
+  <ul>
+    <li>
+      <span>The Matrix</span>
+      <button>Delete</button>
+    </li>
+    <li>
+      <span>The Matrix Reloaded</span>
+      <button>Delete</button>
+    </li>
+  </ul>
+  -->
+
+  <div id="app"></div>
+
+
+  <script type="text/babel">
+
+    // const myP = React.createElement('p', null, 'Hello World')
+
+    function MyP() {
+      // return React.createElement('p', null, 'Hello World')
+      return <p>Hello World</p>
+    }
+
+    ReactDOM.render(<MyP/>, document.querySelector('#app'))
+
+  </script>
+
+</body>
+</html>
