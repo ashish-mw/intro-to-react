@@ -1,46 +1,20 @@
-import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// utilities
-import { getMoviesFromStorage, putMoviesInStorage } from "./utils";
-
-// components
-import AddMovieForm from "./components/AddMovieForm";
-import MovieList from "./components/MovieList";
+// pages
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function App() {
-  const [movieList, setMovieList] = useState([]);
-
-  useEffect(() => {
-    const movies = getMoviesFromStorage();
-    if (movies) {
-      const moviesJSON = JSON.parse(movies);
-      setMovieList(moviesJSON);
-    }
-  }, []);
-
-  useEffect(() => {
-    const movies = JSON.stringify(movieList);
-    putMoviesInStorage(movies);
-  }, [movieList]);
-
-  function handleDelete(id) {
-    setMovieList((prev) => prev.filter((m) => m.id !== id));
-  }
-
-  function handleMovieAdd(movieName) {
-    const newMovie = {
-      name: movieName,
-      id: new Date().getTime(),
-    };
-    const newMovieList = [...movieList];
-    newMovieList.push(newMovie);
-    setMovieList(newMovieList);
-  }
-
   return (
     <div className="App">
-      <AddMovieForm onAdd={handleMovieAdd} />
-      <MovieList movies={movieList} onDelete={handleDelete} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
